@@ -7,6 +7,7 @@ import java.time.Period;
 import vn.kms.launch.codequality.model.Contact;
 
 public class ContactMapper implements Mapper{
+	private static final int DEFAULT_ID = 0;
 	private static final String TAB_CHARACTER = "\t";
 	private static final String SPLASH_CHARACTER = "/";
 	private static final int DAY = 1;
@@ -55,7 +56,7 @@ public class ContactMapper implements Mapper{
 		try {
 			return Integer.parseInt(id);
 		} catch (Exception e) {
-			return 0;
+			return DEFAULT_ID;
 		}
 	}
 	

@@ -13,6 +13,7 @@ import vn.kms.launch.codequality.mapper.Mapper;
 import vn.kms.launch.codequality.model.Contact;
 
 public class ContactReader implements FileReader{
+	private static final int FOURTEEN_COLUMNS = 14;
 	private static final String TAB_CHARACTER = "\t";
 	private static final int FIRST_LINE = 1;
 	private String fileUrl;
@@ -43,7 +44,7 @@ public class ContactReader implements FileReader{
 	
 	private Predicate<String> getLineWithFourteenColumn() {
 		return (string) -> {
-			return string.split(TAB_CHARACTER).length == 14;
+			return string.split(TAB_CHARACTER).length == FOURTEEN_COLUMNS;
 		};
 	}
 }
